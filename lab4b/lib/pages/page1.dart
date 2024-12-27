@@ -14,7 +14,8 @@ class _Page1State extends State<Page1> {
   List<String> item_sub = List.generate(10, (index) => "Subtitle $index");
 
   late int idx = 0;
-  late TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _controllerSubtitle = TextEditingController();
   void showMessage(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -37,11 +38,17 @@ class _Page1State extends State<Page1> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          centerTitle: false,
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const Text('Nopparat Khamkokaew'),
+              const Text(
+                'Nopparat Khamkokaew',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
               const SizedBox(
                 height: 8.0,
               ),
@@ -50,7 +57,7 @@ class _Page1State extends State<Page1> {
                 height: 8.0,
               ),
               SizedBox(
-                height: 300,
+                height: MediaQuery.of(context).size.height * 0.7,
                 child: ListView.builder(
                     itemCount: items.length,
                     itemBuilder: (BuildContext context, int index) {
@@ -59,12 +66,13 @@ class _Page1State extends State<Page1> {
                           onDismissed: (direction) {
                             setState(() {
                               items.removeAt(index);
+                              item_sub.removeAt(index);
                               showMessage('Removed item at index: $index');
                             });
                           },
                           child: Container(
                             height: 75,
-                            color: idx == index ? Colors.blue : null,
+                            color: idx == index ? Colors.blue[200] : null,
                             child: ListTile(
                               leading: const Icon(
                                 Icons.ac_unit_outlined,
@@ -79,13 +87,16 @@ class _Page1State extends State<Page1> {
                                       onPressed: () {
                                         setState(() {
                                           _controller.text = items[index];
+                                          _controllerSubtitle.text =
+                                              item_sub[index];
                                           showModalBottomSheet(
                                             context: context,
                                             builder: (context) {
                                               return Container(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
-                                                margin: const EdgeInsets.all(8.0),
+                                                margin:
+                                                    const EdgeInsets.all(8.0),
                                                 child: Column(
                                                   children: [
                                                     Row(
@@ -112,8 +123,12 @@ class _Page1State extends State<Page1> {
                                                               items[index] =
                                                                   _controller
                                                                       .text;
+                                                              item_sub[index] =
+                                                                  _controllerSubtitle
+                                                                      .text;
                                                               Navigator.pop(
                                                                   context);
+                                                              showMessage('Updated item successfully');
                                                             });
                                                           },
                                                           icon: const Icon(
@@ -131,7 +146,19 @@ class _Page1State extends State<Page1> {
                                                           const InputDecoration(
                                                         border:
                                                             OutlineInputBorder(),
-                                                        labelText: 'Edit Item',
+                                                        labelText: 'Edit Title',
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    TextField(
+                                                      controller:
+                                                          _controllerSubtitle,
+                                                      decoration:
+                                                          const InputDecoration(
+                                                        border:
+                                                            OutlineInputBorder(),
+                                                        labelText:
+                                                            'Edit Subtitle',
                                                       ),
                                                     ),
                                                   ],
@@ -161,13 +188,14 @@ class _Page1State extends State<Page1> {
                                               ),
                                               margin: const EdgeInsets.all(10),
                                               backgroundColor: Colors.black,
-                                              behavior: SnackBarBehavior.floating,
+                                              behavior:
+                                                  SnackBarBehavior.floating,
                                             ),
                                           );
                                         });
                                       },
-                                      icon:
-                                          const Icon(Icons.remove_circle_outline))
+                                      icon: const Icon(
+                                          Icons.remove_circle_outline))
                                 ],
                               ),
                               onTap: () {
@@ -202,6 +230,7 @@ class _Page1State extends State<Page1> {
                     onPressed: () {
                       setState(() {
                         _controller.clear();
+                        _controllerSubtitle.clear();
                         showModalBottomSheet(
                           context: context,
                           builder: (context) {
@@ -230,8 +259,11 @@ class _Page1State extends State<Page1> {
                                         onPressed: () {
                                           setState(() {
                                             items.add(_controller.text);
+                                            item_sub
+                                                .add(_controllerSubtitle.text);
                                             Navigator.pop(context);
-                                            showMessage("Add Item to index of ${items.lastIndexOf(_controller.text)}");
+                                            showMessage(
+                                                "Add Item to index of ${items.lastIndexOf(_controller.text)}");
                                           });
                                         },
                                         icon: const Icon(
@@ -247,7 +279,17 @@ class _Page1State extends State<Page1> {
                                     controller: _controller,
                                     decoration: const InputDecoration(
                                       border: OutlineInputBorder(),
-                                      labelText: 'Item Name',
+                                      labelText: 'Title Name',
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  TextField(
+                                    controller: _controllerSubtitle,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: 'SubTitle Name',
                                     ),
                                   ),
                                 ],
