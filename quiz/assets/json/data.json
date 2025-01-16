@@ -1,0 +1,146 @@
+[
+    {
+        "qid": 0,
+        "title": "HTTP ย่อมาจากอะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "HyperText Transfer Protocol" },
+            { "id": 2, "title": "HighText Transmission Protocol" },
+            { "id": 3, "title": "HyperText Transmission Process" },
+            { "id": 4, "title": "HyperTransfer Text Protocol" }
+        ],
+        "answerId": 1
+    },
+    {
+        "qid": 1,
+        "title": "ข้อใดต่อไปนี้เป็นภาษาการเขียนโปรแกรม?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "HTML" },
+            { "id": 2, "title": "CSS" },
+            { "id": 3, "title": "JavaScript" },
+            { "id": 4, "title": "HTTP" }
+        ],
+        "answerId": 3
+    },
+    {
+        "qid": 2,
+        "title": "ระบบปฏิบัติการมีหน้าที่หลักอะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "เพื่อคอมไพล์โค้ด" },
+            { "id": 2, "title": "เพื่อจัดการทรัพยากรฮาร์ดแวร์และซอฟต์แวร์" },
+            { "id": 3, "title": "เพื่อออกแบบแอปพลิเคชัน" },
+            { "id": 4, "title": "เพื่อแก้ไขเอกสาร" }
+        ],
+        "answerId": 2
+    },
+    {
+        "qid": 3,
+        "title": "บริษัทใดเป็นผู้พัฒนาระบบปฏิบัติการ Windows?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "Apple" },
+            { "id": 2, "title": "Google" },
+            { "id": 3, "title": "Microsoft" },
+            { "id": 4, "title": "IBM" }
+        ],
+        "answerId": 3
+    },
+    {
+        "qid": 4,
+        "title": "SQL ย่อมาจากอะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "Structured Query Language" },
+            { "id": 2, "title": "Sequential Query Language" },
+            { "id": 3, "title": "Standard Query Language" },
+            { "id": 4, "title": "System Query Language" }
+        ],
+        "answerId": 1
+    },
+    {
+        "qid": 5,
+        "title": "ไฟร์วอลล์มีหน้าที่อะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "เพื่อบล็อกไวรัส" },
+            { "id": 2, "title": "เพื่อกรองและตรวจสอบการรับส่งข้อมูลในเครือข่าย" },
+            { "id": 3, "title": "เพื่อเพิ่มประสิทธิภาพการทำงานของฮาร์ดแวร์" },
+            { "id": 4, "title": "เพื่อเข้ารหัสข้อมูล" }
+        ],
+        "answerId": 2
+    },
+    {
+        "qid": 6,
+        "title": "ข้อใดต่อไปนี้เป็นประเภทของฐานข้อมูล?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "MySQL" },
+            { "id": 2, "title": "Photoshop" },
+            { "id": 3, "title": "Illustrator" },
+            { "id": 4, "title": "WordPress" }
+        ],
+        "answerId": 1
+    },
+    {
+        "qid": 7,
+        "title": "ข้อใดต่อไปนี้เป็นระบบปฏิบัติการแบบโอเพนซอร์ส?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "Windows" },
+            { "id": 2, "title": "macOS" },
+            { "id": 3, "title": "Linux" },
+            { "id": 4, "title": "iOS" }
+        ],
+        "answerId": 3
+    },
+    {
+        "qid": 8,
+        "title": "หน้าที่หลักของ RAM ในคอมพิวเตอร์คืออะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "เพื่อจัดเก็บข้อมูลอย่างถาวร" },
+            { "id": 2, "title": "เพื่อประมวลผลกราฟิก" },
+            { "id": 3, "title": "เพื่อจัดเก็บข้อมูลชั่วคราวสำหรับการเข้าถึงที่รวดเร็ว" },
+            { "id": 4, "title": "เพื่อควบคุมการเชื่อมต่อเครือข่าย" }
+        ],
+        "answerId": 3
+    },
+    {
+        "qid": 9,
+        "title": "API ย่อมาจากอะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "Application Programming Interface" },
+            { "id": 2, "title": "Application Process Integration" },
+            { "id": 3, "title": "Application Protocol Interface" },
+            { "id": 4, "title": "Application Program Integration" }
+        ],
+        "answerId": 1
+    },
+    {
+        "qid": 10,
+        "title": "Git ใช้สำหรับอะไร?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "การแก้ไขรูปภาพ" },
+            { "id": 2, "title": "การควบคุมเวอร์ชัน" },
+            { "id": 3, "title": "การสร้างงานนำเสนอ" },
+            { "id": 4, "title": "การคอมไพล์โปรแกรม" }
+        ],
+        "answerId": 2
+    },
+    {
+        "qid": 11,
+        "title": "ข้อใดต่อไปนี้เป็นแพลตฟอร์มคลาวด์คอมพิวติ้ง?",
+        "cover": "",
+        "choice": [
+            { "id": 1, "title": "Microsoft Azure" },
+            { "id": 2, "title": "Visual Studio" },
+            { "id": 3, "title": "Photoshop" },
+            { "id": 4, "title": "Notepad++" }
+        ],
+        "answerId": 1
+    }
+]
