@@ -74,7 +74,10 @@ class _QuizPageState extends State<QuizPage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('${index + 1} : ${quiz[index].title}'),
+                              quiz[index].cover.isNotEmpty ?
+                              Image.asset(quiz[index].cover)
+                              : const SizedBox(),
+                              Text('${index + 1} : ${quiz[index].title}', style: const TextStyle(fontSize: 18),),
                               ListView.builder(
                                 shrinkWrap: true,
                                 itemCount: quiz[index].choice.length,
@@ -110,7 +113,7 @@ class _QuizPageState extends State<QuizPage> {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     int score = 0;
                     for (int i = 0; i < quiz.length - 3; i++) {
                       if (_selected[i] != null &&
@@ -118,7 +121,7 @@ class _QuizPageState extends State<QuizPage> {
                         score++;
                       }
                     }
-                    Navigator.push(
+                    final result = await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => AnswerPage(
@@ -126,6 +129,12 @@ class _QuizPageState extends State<QuizPage> {
                             total: quiz.length - 3,
                           ),
                         ));
+                    if (result == true) {
+                      loadjson();
+                      setState(() {
+                        _selected = List<int?>.filled(quiz.length - 3, null);
+                      });
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,

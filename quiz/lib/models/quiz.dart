@@ -8,23 +8,26 @@ String quizModelToJson(List<QuizModel> data) =>
 
 class QuizModel {
   QuizModel(
-      {required this.title, required this.choice, required this.answerId});
+      {required this.title, required this.choice, required this.answerId, required this.cover});
 
   String title;
   List<QuizChoice> choice;
   int answerId;
+  String cover;
 
   factory QuizModel.fromJson(Map<String, dynamic> json) => QuizModel(
         title: json["title"],
         choice: List<QuizChoice>.from(
             json["choice"].map((x) => QuizChoice.fromJson(x))),
         answerId: json["answerId"],
+        cover: json["cover"],
       );
 
   Map<String, dynamic> toJson() => {
         "title": title,
         "choice": List<dynamic>.from(choice.map((e) => e.toJson())),
-        "answer_id": answerId,
+        "answerId": answerId,
+        "cover": cover,
       };
 }
 

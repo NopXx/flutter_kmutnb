@@ -96,6 +96,14 @@ class _AnswerPageState extends State<AnswerPage> {
             const SizedBox(
               height: 8.0,
             ),
+            _buildCard(context, 'Correct', totalScore.toString()),
+            const SizedBox(
+              height: 8.0,
+            ),
+            _buildCard(context, 'Incorrect', '${quizCount - totalScore}'),
+            const SizedBox(
+              height: 8.0,
+            ),
             _buildCard(context, 'Percentage', percentage.toStringAsFixed(2)),
             const SizedBox(
               height: 8.0,
@@ -104,11 +112,25 @@ class _AnswerPageState extends State<AnswerPage> {
             const SizedBox(
               height: 8.0,
             ),
-            _buildCard(context, 'Total Score', totalScore.toString()),
+            _buildCard(context, 'Count', count.toString()),
             const SizedBox(
               height: 8.0,
             ),
-            _buildCard(context, 'Count', count.toString()),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, true);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              child: const Text(
+                'Try Again',
+                style: TextStyle(color: Colors.white),
+              ),
+            )
           ],
         ),
       ),
