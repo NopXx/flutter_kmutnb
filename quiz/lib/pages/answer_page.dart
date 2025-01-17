@@ -80,7 +80,7 @@ class _AnswerPageState extends State<AnswerPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('Results'),
+            const Text('Results', style: TextStyle(fontSize: 20),),
             const SizedBox(
               height: 8.0,
             ),
@@ -108,7 +108,9 @@ class _AnswerPageState extends State<AnswerPage> {
             const SizedBox(
               height: 8.0,
             ),
-            _buildCard(context, 'Grade', grade.toString()),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: _buildCard(context, 'Grade', grade.toString())),
             const SizedBox(
               height: 8.0,
             ),
@@ -137,7 +139,7 @@ class _AnswerPageState extends State<AnswerPage> {
     );
   }
 
-  Widget _buildCard(BuildContext context, String title, String number) {
+  Widget _buildCard(BuildContext context, String title, String number, {bool setWidth = false}) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
       decoration: BoxDecoration(
